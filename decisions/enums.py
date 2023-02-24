@@ -1,0 +1,7 @@
+NODE_TYPE_LEAF = 0
+NODE_TYPE_NON_LEAF = 1
+
+NODE_TYPE_CHOICES = (
+    (NODE_TYPE_LEAF, 'Leaf'),
+    (NODE_TYPE_NON_LEAF, 'Non Leaf'),
+)
