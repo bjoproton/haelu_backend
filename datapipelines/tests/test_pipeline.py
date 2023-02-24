@@ -1,7 +1,9 @@
+# General imports
 from datapipelines.pipeline import DataPipeline
-from markers.models import Marker, MarkerResult
-
 import pytest
+
+# Haelu imports
+from markers.models import Marker, MarkerResult
 
 
 @pytest.mark.django_db

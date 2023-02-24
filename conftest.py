@@ -1,7 +1,12 @@
+# General imports
 import pytest
 from rest_framework.test import APIClient
+
+# Haelu imports
 from account.models import User
 from markers.models import Marker
+from haelu.enums import VALUE_TYPE_INTEGER, VALUE_TYPE_FLOAT, VALUE_TYPE_BOOLEAN
+
 
 @pytest.fixture
 def request_client():
@@ -20,8 +25,8 @@ def patient_user():
 
 @pytest.fixture
 def markers():
-    Marker(name='age', value_type=Marker.VALUE_TYPE_INTEGER, unit='years').save()
-    Marker(name='urine infection', value_type=Marker.VALUE_TYPE_BOOLEAN, unit='').save()
-    Marker(name='systolic bp', value_type=Marker.VALUE_TYPE_INTEGER, unit='mmHg').save()
-    Marker(name='mental state concern', value_type=Marker.VALUE_TYPE_BOOLEAN, unit='').save()
+    Marker(name='age', value_type=VALUE_TYPE_INTEGER, unit='years').save()
+    Marker(name='urine infection', value_type=VALUE_TYPE_BOOLEAN, unit='').save()
+    Marker(name='systolic bp', value_type=VALUE_TYPE_INTEGER, unit='mmHg').save()
+    Marker(name='mental state concern', value_type=VALUE_TYPE_BOOLEAN, unit='').save()
     return Marker.objects.all()
